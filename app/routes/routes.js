@@ -6,14 +6,14 @@ module.exports = function(application){
 
 	application.get('/iniciar', function(req,res){
 		console.log('routes: /iniciar');
-		application.app.controllers.jogo.iniciar(application,req,res);
+		application.app.controllers.jogo.iniciar(application, req, res);
 
 		//res.send('Esta funcionalidade não foi implementada ainda.');
 	});
 
 	application.get('/lancarDados', function(req,res){
 		console.log('routes: /lancarDados');
-		res.send('Esta funcionalidade não foi implementada ainda.');
+		application.app.controllers.jogo.novoLancamento(application, req, res);
 	});
 
 	application.get('/reiniciar', function(req,res){
