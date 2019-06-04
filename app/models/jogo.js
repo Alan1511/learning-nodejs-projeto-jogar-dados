@@ -40,8 +40,8 @@ Jogo.prototype.contarDados = function(lancamento) {
 }
 
 const GENERALA = { jogo : 'Generala' , pontos : 100 }
-const POKER    = { jogo:  'Poker'    , pontos : 50  }
-const FULL     = { jogo:  'Full'     , pontos : 30  }
+const POKER    = { jogo : 'Poker'    , pontos : 50  }
+const FULL     = { jogo : 'Full'     , pontos : 30  }
 const NADA     = { jogo : 'Nenhum'   , pontos : 0   }
 
 Jogo.prototype.analisarLancamento = function(lancamento){
@@ -62,6 +62,30 @@ Jogo.prototype.analisarLancamento = function(lancamento){
 	return resultado;
 
 }
+
+Jogo.prototype.novoLancamento = function(){
+
+	console.log('model: novoLancamento');
+	var lancamento = this.lancarDados();
+	console.log('model: analiseLancamento');
+	var analiseLancamento = this.analisarLancamento(lancamento);
+	this.pontos += analiseLancamento.pontos;
+	this.n += 1;
+	console.log('model: prepara resultado');
+
+	var resultado = {
+		pontosAcumulados : this.pontos,
+		nLancamentos : this.n,
+		lancamento : lancamento,
+		jogoLancamento : analiseLancamento.jogo,
+		pontosLancamento : analiseLancamento.pontos
+	};
+
+	return resultado;
+
+}
+
+
 
 jogo = new Jogo();
 
