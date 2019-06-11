@@ -9,9 +9,9 @@
 
 	<main>
 
-	<div class="container col-12 col-sm-8 col-md-6 bg-light p-2 text-center">
+	<div class="container col-12 col-sm-8 col-md-6 bg-dark p-2 text-center">
 
-		<h1>Projeto Jogar Dados</h1>
+		<h1 class="text-primary">Projeto Jogar Dados</h1>
 
 		<div class="container">
 			
@@ -21,12 +21,71 @@
 					
 					<div class="card">
 						
-						<div class="card-header">Pontos Acumulados</div>
-						<div class="card-body"><%= pontosAcumulados %></div>
+						<div class="card-header text-primary">Pontos Acumulados</div>
+						<div class="card-body bg-secondary text-light"><%= pontosAcumulados %></div>
 
 					</div>
 
+
 				</div>
+
+				<div class="col-6 p-2">
+					
+					<div class="card">
+						
+						<div class="card-header text-primary">Número de lançamentos</div>
+						<div class="card-body bg-secondary text-light"><%= nLancamentos%></div>
+
+					</div>
+
+
+				</div>
+
+				<div class="col-12 p-2">
+					
+					<div class="card">
+						
+					<div class="card-header text-primary">Lançamentos</div>
+
+
+					<div class="card-body bg-secondary text-light">
+
+							<% for (var i=0; i < lancamento.length; i++) { %>
+
+							<img src="img/dado<%= lancamento[i]%>.png" class="p-2 col-3-sm-2">
+
+						<% } %>
+
+					</div>
+
+					</div>
+
+
+				</div>
+				<div class="col-6 p-2">
+					
+					<div class="card">
+						
+						<div class="card-header text-primary">Lançamento do jogo</div>
+						<div class="card-body bg-secondary text-light"><%= jogoLancamento %></div>
+
+					</div>
+
+
+				</div>
+
+				<div class="col-6 p-2">
+					
+					<div class="card">
+						
+						<div class="card-header text-primary">Pontos do Lançamento</div>
+						<div class="card-body bg-secondary text-light"><%= pontosLancamento %></div>
+
+					</div>
+
+
+				</div>
+
 				
 
 			</div>
@@ -34,22 +93,21 @@
 
 		</div>
 
+		<div class="col-12 mx-auto mt-2 px-4">
 
-		<p>Pontuação acumulada: <%= pontosAcumulados %></p>
+		<button class="btn btn-success text-dark btn-block" type="button" id="buttonLancarDados">Lançar Dados</button>
 
-		<p>Número de lançamentos: <%= nLancamentos %></p>
+		</div>
+		<div class="col-6 mx-auto p-4">
 
-		<p>Lançamento: <%= lancamento %></p>
+		<button class="btn btn-warning btn-block text-dark" type="button" id="buttonReiniciarJogo">Reiniciar</button>
 
-		<p>Jogo Lançamento Atual: <%= jogoLancamento %></p>
+		</div>
+		<div class="col-6 mx-auto p-4">
 
-		<p>Pontuação Lançamento: <%= pontosLancamento %></p>
+		<button class="btn btn-danger btn-block text-dark" type="button" id="buttonEncerrarJogo">Encerrar</button>
 
-		<button class="btn btn-success" type="button" id="buttonLancarDados">Lançar Dados</button>
-
-		<button class="btn btn-warning" type="button" id="buttonReiniciarJogo">Reiniciar</button>
-
-		<button class="btn btn-danger" type="button" id="buttonEncerrarJogo">Encerrar</button>
+		</div>
 
 	</div>
 
