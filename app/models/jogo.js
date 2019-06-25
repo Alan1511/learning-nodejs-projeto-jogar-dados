@@ -85,6 +85,13 @@ Jogo.prototype.novoLancamento = function(){
 
 }
 
+Jogo.prototype.salvarPontuacao = function(connection, callback) {
+	console.log('model : salvarPontuacao')
+	connection.query(
+		`INSERT INTO pontuacao_jogo (pontuacao) VALUES (${this.pontos})`, callback
+		);
+}
+
 
 
 jogo = new Jogo();

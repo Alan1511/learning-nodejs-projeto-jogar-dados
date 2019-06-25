@@ -32,6 +32,14 @@ module.exports.novoLancamento = function(application, req, res){
 module.exports.reiniciar = function(application, req, res){
 	console.log('controller : reiniciar');
 	if (jogoModel){
+
+
+		var connection = application.config.dbConnection.connection;
+		jogoModel.salvarPontuacao(connection, function(error, result){
+			console.log(error);
+
+		});
+
 		console.log('controller: pede para o model criar um novo jogo');
 		jogoModel.novoJogo();
 		console.log('controller: atualizar a view');
@@ -48,3 +56,14 @@ module.exports.encerrar = function(application, req, res){
 	jogoModel = undefined;
 	res.render('home');
 }
+
+module.exports.pontuacao = function(connection, application, req, res){
+	console.log('controller : pontuacao');
+	
+	findAll(connection, function(){
+		res.render('listaPontuacao', lista);
+	});
+	jogoModel = undefined;
+	res.render('listaPontuacao', lista);
+}
+
