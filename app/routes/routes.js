@@ -31,7 +31,7 @@ module.exports = function(application){
 	application.get('/pontuacao', function(req,res){
 		console.log('routes: /pontuacao');
 		application.app.controllers.jogo.pontuacao(application, req, res);
-		//res.render('listaPontuacao');
+		res.render('listaPontuacao');
 		//res.send('Esta funcionalidade não foi implementada ainda.');
 	});
 

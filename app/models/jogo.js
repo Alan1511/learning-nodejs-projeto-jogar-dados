@@ -92,6 +92,13 @@ Jogo.prototype.salvarPontuacao = function(connection, callback) {
 		);
 }
 
+Jogo.prototype.listaPontuacao = function(connection, callback) {
+	console.log('model : listaPontuacao')
+	connection.query(
+		`SELECT * FROM pontuacao_jogo` , callback
+		);
+}
+
 
 
 jogo = new Jogo();
@@ -99,6 +106,7 @@ jogo = new Jogo();
 lancamento = jogo.lancarDados();
 contagem = jogo.contarDados(lancamento);
 resultado = jogo.analisarLancamento(lancamento);
+
 
 console.log('dados sorteados: ', lancamento );
 console.log('contagem: ', contagem);
