@@ -57,11 +57,13 @@ module.exports.encerrar = function(application, req, res){
 	res.render('home');
 }
 
-module.exports.pontuacao = function(connection, application, req, res){
+module.exports.pontuacao = function(application, req, res){
 	console.log('controller : pontuacao');
-	Jogo.findAll(connection,
+	var connection = application.config.dbConnection.connection;
+	jogoModel.listaPontuacao(connection,
 		function(error, result){
-		//res.render('listaPontuacao', {listaPontuacao: pontuacao});
+
+		res.render('listaPontuacao', {listaPontuacao: result});
 		header = {
 			'id' : '#',
 			'pontuacao' : 'pontuacao'
@@ -74,6 +76,6 @@ module.exports.pontuacao = function(connection, application, req, res){
 		
 	});
 	jogoModel = undefined;
-	res.render('listaPontuacao', lista);
+	//res.render('listaPontuacao', lista);
 }
 
