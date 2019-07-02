@@ -16,7 +16,7 @@ Jogo.prototype.lancarUmDado = function(){
 	var valorAleatorio = Math.random(); // No intervalo [0,1)
 	// De [0,1) * 6 => [0,6)
 	// Usando Math.floor temos [0,1,2,3,4,5]
-	// Somando uma unuidade temos [1,2,3,4,5,6]
+	// Somando uma unidade temos [1,2,3,4,5,6]
 	var lado =  1 + Math.floor(valorAleatorio * this.lados);
 	return lado;
 }

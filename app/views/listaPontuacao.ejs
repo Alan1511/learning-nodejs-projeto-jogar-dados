@@ -12,7 +12,6 @@
 <main>	
 	
   <div class="container col-8">
-
     <h1>Lista de Pontuação</h1>
       <table>
     <thead>
@@ -25,12 +24,13 @@
     </thead>
 
     <tbody>
-      <% for (var i=1; i<=10; i++) { %>
+     
+           <% for (var i=0; i < lista.length; i++) { %>
       <tr>
 
-        <td></td>
-        <td></td>
-
+        <td><%= lista[i].id %></td> 
+        <td><%= lista[i].pontuacao %></td> 
+      
       </tr>
       <% } %>
     </tbody>

@@ -62,8 +62,11 @@ module.exports.pontuacao = function(application, req, res){
 	var connection = application.config.dbConnection.connection;
 	jogoModel.listaPontuacao(connection,
 		function(error, result){
-
-		res.render('listaPontuacao', {listaPontuacao: result});
+		
+		console.log(result[0].id);
+		
+		res.render('listaPontuacao', {lista : result}); 
+		/*
 		header = {
 			'id' : '#',
 			'pontuacao' : 'pontuacao'
@@ -71,11 +74,11 @@ module.exports.pontuacao = function(application, req, res){
 		operations = {
 			'field' : 'id',
 			'model' : 'pontuacao'
-		};
+		};*/
 		//res.json({ header : header, data : result, operations : operations});
 		
 	});
-	jogoModel = undefined;
+	
 	//res.render('listaPontuacao', lista);
 }
 
