@@ -58,8 +58,8 @@ module.exports.encerrar = function(application, req, res){
 }
 
 module.exports.pontuacao = function(connection, application, req, res){
-	//console.log('controller : pontuacao');
-	listaPontuacao.findAll().then(connection, 
+	console.log('controller : pontuacao');
+	Jogo.findAll(connection,
 		function(error, result){
 		//res.render('listaPontuacao', {listaPontuacao: pontuacao});
 		header = {
@@ -70,6 +70,7 @@ module.exports.pontuacao = function(connection, application, req, res){
 			'field' : 'id',
 			'model' : 'pontuacao'
 		};
+		//res.json({ header : header, data : result, operations : operations});
 		
 	});
 	jogoModel = undefined;
