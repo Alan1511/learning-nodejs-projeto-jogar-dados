@@ -15,7 +15,8 @@ var jogoModel = undefined;
 module.exports.iniciar = function (application, req, res) {
 	console.log('controller: iniciar');
 	console.log('controller: cria instância de jogo');
-	jogoModel = new application.app.models.jogo.Jogo();
+	nome = req.body.nome;
+	jogoModel = new application.app.models.jogo.Jogo(nome);
 	console.log('controller: atualiza view - novoJogo');
 	res.render('novoJogo');
 }

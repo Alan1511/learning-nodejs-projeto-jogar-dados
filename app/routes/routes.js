@@ -4,7 +4,7 @@ module.exports = function(application){
 		res.render('home');
 	});
 
-	application.get('/iniciar', function(req,res){
+	application.post('/iniciar', function(req,res){
 		console.log('routes: /iniciar');
 		application.app.controllers.jogo.iniciar(application, req, res);
 

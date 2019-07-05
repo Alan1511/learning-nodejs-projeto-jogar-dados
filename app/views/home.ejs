@@ -13,8 +13,10 @@
 			<h1>Projeto Jogar Dados</h1>
 
 			<p>Clique no botão abaixo para iniciar o jogo</p>
-
-			<button class="btn btn-success" type="button" id="buttonComecar">Começar</button>
+			<form method="post" action="iniciar">
+				<input type="text" name="nome" placeholder="nome" required="">
+			<button class="btn btn-success" type="submit" id="buttonComecar">Começar</button>
+			</form>
 		</div>
 	</main>
 		
@@ -22,16 +24,5 @@
 </body>
 
 <script src='js/jquery-3.4.1.min.js'></script>
-
-<script type="text/javascript">
-
-	$(document).ready(function(){
-
-		$('#buttonComecar').click(function(){
-			location.href = 'iniciar';
-		})
-
-	})
-</script>
-
+	
 </html>

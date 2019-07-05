@@ -1,5 +1,6 @@
-function Jogo(dados = 5, lados = 6) {
+function Jogo(nome, dados = 5, lados = 6) {
 	console.log('model: executar constructor de jogo');
+	this.nome = nome;
 	this.dados = dados;
 	this.lados = lados;
 	this.pontos = 0;
@@ -88,7 +89,7 @@ Jogo.prototype.novoLancamento = function(){
 Jogo.prototype.salvarPontuacao = function(connection, callback) {
 	console.log('model : salvarPontuacao')
 	connection.query(
-		`INSERT INTO pontuacao_jogo (pontuacao) VALUES (${this.pontos})`, callback
+		`INSERT INTO pontuacao_jogo (pontuacao,nome) VALUES (${this.pontos},'${this.nome}')`, callback
 		);
 }
 
