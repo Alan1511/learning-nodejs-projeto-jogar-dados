@@ -78,7 +78,7 @@ Jogo.prototype.novoLancamento = function(){
 		nLancamentos : this.n,
 		lancamento : lancamento,
 		jogoLancamento : analiseLancamento.jogo,
-		pontosLancamento : analiseLancamento.pontos
+		pontosLancamento : analiseLancamento.pontos,
 	};
 
 	return resultado;
@@ -95,7 +95,7 @@ Jogo.prototype.salvarPontuacao = function(connection, callback) {
 Jogo.prototype.listaPontuacao = function(connection, callback) {
 	console.log('model : listaPontuacao. Operação findAll');
 	connection.query(
-		`SELECT * FROM pontuacao_jogo` , callback
+		`SELECT * FROM pontuacao_jogo ORDER BY pontuacao DESC` , callback
 		);
 }
 
